@@ -27,36 +27,20 @@
 			<div class="wrap-contact3">
 				<form class="contact3-form validate-form">
 					<span class="contact3-form-title">
-						Contact Us
+						Новая заявка
 					</span>
 
-					<div class="wrap-contact3-form-radio">
-						<div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio1" type="radio" name="choice" value="say-hi" checked="checked">
-							<label class="label-radio3" for="radio1">
-								Say Hi
-							</label>
-						</div>
-
-						<div class="contact3-form-radio">
-							<input class="input-radio3" id="radio2" type="radio" name="choice" value="get-quote">
-							<label class="label-radio3" for="radio2">
-								Get a Quote
-							</label>
-						</div>
-					</div>
-
-					<div class="wrap-input3 validate-input" data-validate="Name is required">
-						<input class="input3" type="text" name="name" placeholder="Your Name">
+					<div class="wrap-input3 validate-input" data-validate="Name is required" style="padding-top: 0px">
+						<input class="input3" type="text" name="name" placeholder="Ваше имя">
 						<span class="focus-input3"></span>
 					</div>
 
 					<div class="wrap-input3 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input3" type="text" name="email" placeholder="Your Email">
+						<input class="input3" type="text" name="phone" placeholder="Ваш номер телефона">
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 input3-select">
+					<!--<div class="wrap-input3 input3-select">
 						<div>
 							<select class="selection-2" name="service">
 								<option>Needed Services</option>
@@ -78,16 +62,83 @@
 							</select>
 						</div>
 						<span class="focus-input3"></span>
-					</div>
+                    </div>-->
+                    
+                    <span class="text-label" style="padding-bottom: 20px;">Выберите услуги:</span>
+                    <div class="wrap-contact3-form-radio">
+						<div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio1" type="checkbox" name="choice" value="Перманентный макияж бровей в технике «Пудровое напыление»">
+							<label class="label-radio3" for="radio1">
+								Перманентный макияж бровей в технике «Пудровое напыление» - 270 рублей
+							</label>
+						</div>
 
-					<div class="wrap-input3 validate-input" data-validate = "Message is required">
+                        <div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio2" type="checkbox" name="choice" value="Перманентный макияж бровей в технике «Волоски»">
+							<label class="label-radio3" for="radio2">
+								Перманентный макияж бровей в технике «Волоски» - 320 рублей
+							</label>
+                        </div>
+                        
+                        <div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio3" type="checkbox" name="choice" value="Перманентный макияж губ">
+							<label class="label-radio3" for="radio3">
+								Перманентный макияж губ - 270 рублей
+							</label>
+                        </div>
+                        
+                        <div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio4" type="checkbox" name="choice" value="Перманентный макияж межреснички">
+							<label class="label-radio3" for="radio4">
+								Перманентный макияж межреснички - 220 рублей
+							</label>
+                        </div>
+                        
+                        <div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio5" type="checkbox" name="choice" value="Перманентный макияж стрелок">
+							<label class="label-radio3" for="radio5">
+								Перманентный макияж стрелок - 300 рублей
+							</label>
+                        </div>
+                        
+                        <div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio6" type="checkbox" name="choice" value="Коррекция одной зоны">
+							<label class="label-radio3" for="radio6">
+								Коррекция одной зоны - 100 рублей
+							</label>
+                        </div>
+
+                        <div class="wrap-input3 validate-input" id="corrections_block">
+                            <input class="input3" type="number" min="1" name="test1" id="corrections_num" placeholder="Количество процедур коррекции">
+                            <span class="focus-input3"></span>
+                        </div>
+                        
+                        <div class="contact3-form-radio m-r-42">
+							<input class="input-radio3" id="radio7" type="checkbox" name="choice" value="Обновление одной зоны">
+							<label class="label-radio3" for="radio7">
+								Обновление одной зоны - 160 рублей
+							</label>
+                        </div>
+
+                        <div class="wrap-input3 validate-input" id="renews_block">
+                            <input class="input3" type="number" min="1" type="text" name="test2" id="renews_num" placeholder="Количество процедур обновления">
+                            <span class="focus-input3"></span>
+                        </div>
+                    </div>
+
+                    <div class="contact3-form-radio m-r-42" style="padding-bottom: 30px;">
+                        <span class="text-label">Желаемая дата визита</span>
+                        <input type="date" name="date" id="date" class="date">
+                    </div>
+                    
+					<!--<div class="wrap-input3 validate-input" data-validate = "Message is required">
 						<textarea class="input3" name="message" placeholder="Your Message"></textarea>
 						<span class="focus-input3"></span>
-					</div>
+					</div>-->
 
 					<div class="container-contact3-form-btn">
 						<button class="contact3-form-btn">
-							Submit
+							Рассчитать
 						</button>
 					</div>
 				</form>
@@ -106,7 +157,7 @@
 <!--===============================================================================================-->
 	<script src="{{ asset('js/select2.min.js') }}"></script>
 	<script>
-		$(".selection-2").select2({
+		$(".selection-7").select2({
 			minimumResultsForSearch: 20,
 			dropdownParent: $('#dropDownSelect1')
 		});
@@ -114,7 +165,7 @@
 <!--===============================================================================================-->
     <script src="{{ asset('js/main.js') }}"></script>
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];

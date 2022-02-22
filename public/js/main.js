@@ -15,11 +15,29 @@
             }
         })    
     })
-            
+
+    $('#corrections_block' ).hide();
+    $('#renews_block' ).hide();
+
+    $('#radio6').on('change', function(){
+        if ($(this).is(':checked')) {
+            $('#corrections_block').show()
+        }else{
+            $('#corrections_block' ).hide();
+        }
+    });
+
+    $('#radio7').on('change', function(){
+        if ($(this).is(':checked')) {
+            $('#renews_block').show();
+        }else{
+            $('#renews_block' ).hide();
+        }
+    });
 
     /*==================================================================
     [ Chose Radio ]*/
-    $("#radio1").on('change', function(){
+    /*$("#radio1").on('change', function(){
         if ($(this).is(":checked")) {
             $('.input3-select').slideUp(300);
         }
@@ -29,14 +47,12 @@
         if ($(this).is(":checked")) {
             $('.input3-select').slideDown(300);
         }
-    });
+    });*/
         
-  
-    
     /*==================================================================
     [ Validate ]*/
     var name = $('.validate-input input[name="name"]');
-    var email = $('.validate-input input[name="email"]');
+    var phone = $('.validate-input input[name="phone"]');
     var message = $('.validate-input textarea[name="message"]');
 
 
@@ -49,10 +65,10 @@
         }
 
 
-        if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+        /*if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
             showValidate(email);
             check=false;
-        }
+        }*/
 
         if($(message).val().trim() == ''){
             showValidate(message);
@@ -69,6 +85,15 @@
        });
     });
 
+    // Валидация даты (от текущего дня)
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    $('#date').attr('min',today);
+
     function showValidate(input) {
         var thisAlert = $(input).parent();
 
@@ -80,7 +105,6 @@
 
         $(thisAlert).removeClass('alert-validate');
     }
-    
     
 
 })(jQuery);
