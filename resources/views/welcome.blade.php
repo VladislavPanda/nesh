@@ -7,15 +7,15 @@
 <!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
 <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/fonts/font-awesome.min.css') }}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/animate.css') }}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/css-hamburgers/hamburgers.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/hamburgers.min.css') }}">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/select2.min.css') }}">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
@@ -99,12 +99,12 @@
 	<div id="dropDownSelect1"></div>
 
 <!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="{{ asset('js/popper.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
+	<script src="{{ asset('js/select2.min.js') }}"></script>
 	<script>
 		$(".selection-2").select2({
 			minimumResultsForSearch: 20,
@@ -112,7 +112,7 @@
 		});
 	</script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
