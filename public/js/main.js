@@ -16,6 +16,8 @@
         })    
     })
 
+    $("#phone").mask("+375(99) 999-99-99");
+
     $('#corrections_block' ).hide();
     $('#renews_block' ).hide();
 

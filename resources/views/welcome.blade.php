@@ -26,8 +26,9 @@
 		<div class="container-contact3">
 			<div class="wrap-contact3">
 				<form class="contact3-form validate-form">
+					@csrf
 					<span class="contact3-form-title">
-						Новая заявка
+						Рассрочка
 					</span>
 
 					<div class="wrap-input3 validate-input" data-validate="Name is required" style="padding-top: 0px">
@@ -35,8 +36,8 @@
 						<span class="focus-input3"></span>
 					</div>
 
-					<div class="wrap-input3 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input3" type="text" name="phone" placeholder="Ваш номер телефона">
+					<div class="wrap-input3 validate-input">
+						<input class="input3" type="text" name="phone" id="phone" placeholder="Ваш номер телефона">
 						<span class="focus-input3"></span>
 					</div>
 
@@ -67,68 +68,68 @@
                     <span class="text-label" style="padding-bottom: 20px;">Выберите услуги:</span>
                     <div class="wrap-contact3-form-radio">
 						<div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio1" type="checkbox" name="choice" value="Перманентный макияж бровей в технике «Пудровое напыление»">
+							<input class="input-radio3" id="radio1" type="checkbox" name="choice[]" value="Перманентный макияж бровей в технике «Пудровое напыление»">
 							<label class="label-radio3" for="radio1">
 								Перманентный макияж бровей в технике «Пудровое напыление» - 270 рублей
 							</label>
 						</div>
 
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio2" type="checkbox" name="choice" value="Перманентный макияж бровей в технике «Волоски»">
+							<input class="input-radio3" id="radio2" type="checkbox" name="choice[]" value="Перманентный макияж бровей в технике «Волоски»">
 							<label class="label-radio3" for="radio2">
 								Перманентный макияж бровей в технике «Волоски» - 320 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio3" type="checkbox" name="choice" value="Перманентный макияж губ">
+							<input class="input-radio3" id="radio3" type="checkbox" name="choice[]" value="Перманентный макияж губ">
 							<label class="label-radio3" for="radio3">
 								Перманентный макияж губ - 270 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio4" type="checkbox" name="choice" value="Перманентный макияж межреснички">
+							<input class="input-radio3" id="radio4" type="checkbox" name="choice[]" value="Перманентный макияж межреснички">
 							<label class="label-radio3" for="radio4">
 								Перманентный макияж межреснички - 220 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio5" type="checkbox" name="choice" value="Перманентный макияж стрелок">
+							<input class="input-radio3" id="radio5" type="checkbox" name="choice[]" value="Перманентный макияж стрелок">
 							<label class="label-radio3" for="radio5">
 								Перманентный макияж стрелок - 300 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio6" type="checkbox" name="choice" value="Коррекция одной зоны">
+							<input class="input-radio3" id="radio6" type="checkbox" name="choice[]" value="Коррекция одной зоны">
 							<label class="label-radio3" for="radio6">
 								Коррекция одной зоны - 100 рублей
 							</label>
                         </div>
 
                         <div class="wrap-input3 validate-input" id="corrections_block">
-                            <input class="input3" type="number" min="1" name="test1" id="corrections_num" placeholder="Количество процедур коррекции">
+                            <input class="input3" type="number" min="1" name="corrections_num" id="corrections_num" placeholder="Количество процедур коррекции">
                             <span class="focus-input3"></span>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio7" type="checkbox" name="choice" value="Обновление одной зоны">
+							<input class="input-radio3" id="radio7" type="checkbox" name="choice[]" value="Обновление одной зоны">
 							<label class="label-radio3" for="radio7">
 								Обновление одной зоны - 160 рублей
 							</label>
                         </div>
 
                         <div class="wrap-input3 validate-input" id="renews_block">
-                            <input class="input3" type="number" min="1" type="text" name="test2" id="renews_num" placeholder="Количество процедур обновления">
+                            <input class="input3" type="number" min="1" type="text" name="renews_num" id="renews_num" placeholder="Количество процедур обновления">
                             <span class="focus-input3"></span>
                         </div>
                     </div>
 
                     <div class="contact3-form-radio m-r-42" style="padding-bottom: 30px;">
                         <span class="text-label">Желаемая дата визита</span>
-                        <input type="date" name="date" id="date" class="date">
+                        <input type="date" name="visit_date" id="date" class="date">
                     </div>
                     
 					<!--<div class="wrap-input3 validate-input" data-validate = "Message is required">
@@ -153,7 +154,8 @@
     <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('js/popper.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('js/select2.min.js') }}"></script>
 	<script>
