@@ -11,6 +11,6 @@ class Request extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $table = 'requests';
+    protected $table = 'appointments';
     protected $guarded = [];
 }

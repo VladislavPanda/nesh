@@ -25,7 +25,7 @@
     <div class="bg-contact3" style="background-image: url('{{ asset('images/nesh.jpg') }}');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form">
+				<form class="contact3-form validate-form" action=" {{ route('appointments.store') }} " method="post">
 					@csrf
 					<span class="contact3-form-title">
 						Рассрочка
@@ -129,7 +129,7 @@
 
                     <div class="contact3-form-radio m-r-42" style="padding-bottom: 30px;">
                         <span class="text-label">Желаемая дата визита</span>
-                        <input type="date" name="visit_date" id="date" class="date">
+                        <input type="date" name="visit_date" id="date" class="date" required>
                     </div>
                     
 					<!--<div class="wrap-input3 validate-input" data-validate = "Message is required">
