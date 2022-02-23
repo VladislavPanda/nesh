@@ -44,10 +44,10 @@
 					<!--<div class="wrap-input3 input3-select">
 						<div>
 							<select class="selection-2" name="service">
-								<option>Needed Services</option>
+								<option>Needed appointmentProcedures</option>
 								<option>eCommerce Bussiness</option>
 								<option>UI/UX Design</option>
-								<option>Online Services</option>
+								<option>Online appointmentProcedures</option>
 							</select>
 						</div>
 						<span class="focus-input3"></span>
@@ -68,42 +68,42 @@
                     <span class="text-label" style="padding-bottom: 20px;">Выберите услуги:</span>
                     <div class="wrap-contact3-form-radio">
 						<div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio1" type="checkbox" name="choice[]" value="Перманентный макияж бровей в технике «Пудровое напыление»">
+							<input class="input-radio3" id="radio1" type="checkbox" name="appointmentProcedures[]" value="Перманентный макияж бровей в технике «Пудровое напыление»">
 							<label class="label-radio3" for="radio1">
 								Перманентный макияж бровей в технике «Пудровое напыление» - 270 рублей
 							</label>
 						</div>
 
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio2" type="checkbox" name="choice[]" value="Перманентный макияж бровей в технике «Волоски»">
+							<input class="input-radio3" id="radio2" type="checkbox" name="appointmentProcedures[]" value="Перманентный макияж бровей в технике «Волоски»">
 							<label class="label-radio3" for="radio2">
 								Перманентный макияж бровей в технике «Волоски» - 320 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio3" type="checkbox" name="choice[]" value="Перманентный макияж губ">
+							<input class="input-radio3" id="radio3" type="checkbox" name="appointmentProcedures[]" value="Перманентный макияж губ">
 							<label class="label-radio3" for="radio3">
 								Перманентный макияж губ - 270 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio4" type="checkbox" name="choice[]" value="Перманентный макияж межреснички">
+							<input class="input-radio3" id="radio4" type="checkbox" name="appointmentProcedures[]" value="Перманентный макияж межреснички">
 							<label class="label-radio3" for="radio4">
 								Перманентный макияж межреснички - 220 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio5" type="checkbox" name="choice[]" value="Перманентный макияж стрелок">
+							<input class="input-radio3" id="radio5" type="checkbox" name="appointmentProcedures[]" value="Перманентный макияж стрелок">
 							<label class="label-radio3" for="radio5">
 								Перманентный макияж стрелок - 300 рублей
 							</label>
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio6" type="checkbox" name="choice[]" value="Коррекция одной зоны">
+							<input class="input-radio3" id="radio6" type="checkbox" name="appointmentProcedures[]" value="Коррекция одной зоны">
 							<label class="label-radio3" for="radio6">
 								Коррекция одной зоны - 100 рублей
 							</label>
@@ -115,7 +115,7 @@
                         </div>
                         
                         <div class="contact3-form-radio m-r-42">
-							<input class="input-radio3" id="radio7" type="checkbox" name="choice[]" value="Обновление одной зоны">
+							<input class="input-radio3" id="radio7" type="checkbox" name="appointmentProcedures[]" value="Обновление одной зоны">
 							<label class="label-radio3" for="radio7">
 								Обновление одной зоны - 160 рублей
 							</label>
