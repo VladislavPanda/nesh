@@ -56,7 +56,7 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-	color: #57b846;
+	color: #f0878c;
 }
 
 /*---------------------------------------------*/
@@ -132,6 +132,13 @@ iframe {
   background-size: cover;
 }
 
+#bg-contact3 {
+  width: 100%;  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
 .container-contact3 {
   width: 100%;  
   min-height: 100vh;
@@ -145,7 +152,6 @@ iframe {
   align-items: center;
   padding: 15px;
   background: rgba(255,255,255,0.8);
-  
 }
 
 .wrap-contact3 {
@@ -609,3 +615,79 @@ textarea.input3 {
   /*background: #f0878c;*/
   border-radius: 5px;
 }
+
+/* Список с результатами вывода */
+.list-counter-square {
+  list-style: none;
+  counter-reset: list;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.list-counter-square>li {
+  position: relative;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: 2rem;
+  margin-bottom: .25rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  color: #fff;
+  background:  #f0878c;
+  white-space: nowrap;
+}
+.list-counter-square>li:last-child {
+  margin-bottom: 0;
+}
+.list-counter-square>li::before {
+  content: counter(list);
+  counter-increment: list;
+  position: absolute;
+  left: -2rem;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  line-height: 2rem;
+  /*text-align: center;*/
+  color: #fff;
+  background:  #f0878c;
+}
+
+#list-title{
+  text-align: center;
+  color: #fff;
+  background: rgba(245, 124, 0, .75);
+}
+
+#info-block{
+  position: relative;
+  display: block;
+  height: 2rem;
+  line-height: 2rem;
+  margin-left: 2rem;
+  margin-bottom: .25rem;
+  /*padding-left: .5rem;
+  padding-right: .5rem;*/
+  color: #fff;
+  background:  #f5676e;
+  white-space: nowrap;
+  margin-top: 30px;
+}
+
+#info-text{
+  /*text-align: center;*/
+  color: #fff;
+  background: #f0878c;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block; /* Строчно-блочный элемент */
+  background:  #d3454c;
+  color: #fff; /* Белый цвет текста */
+  padding: 1rem 1.5rem; /* Поля вокруг текста */
+  text-decoration: none; /* Убираем подчёркивание */
+  border-radius: 3px; /* Скругляем уголки */
+  margin-top: 60px;
+ }

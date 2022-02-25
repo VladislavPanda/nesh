@@ -3,15 +3,17 @@
 namespace App\Services\Appointment;
 
 use App\Models\Procedure;
+use Carbon\Carbon;
 
 class InstallmentCounter{
 
+    // Метод распределения данных формы на обработку
     public function prepareAppointment($appointment){
-        $appointment = $this->countSum($appointment);
-        $appointment = $this->installmentPeriod($appointment);
-        $appointment = $this->paymentDates($appointment);
+        $appointment = $this->countSum($appointment); // Рассчитываем исходную сумму
+        $appointment = $this->installmentPeriod($appointment); // Рассчитываем кол-во месяцев рассрочки и сумм платежей
+        $appointment = $this->paymentDates($appointment); //Рассчитываем даты платежей
 
-        
+        return $appointment;
     }
 
     // Метод расчёта общей суммы процедур
@@ -60,6 +62,16 @@ class InstallmentCounter{
 
     // Метод вычисления дат платежей по рассрочке 
     private function paymentDates($appointment){
+        $monthsCnt = 3;
+        $visitDateExploded = explode('-', $appointment['visit_date']);
+
+        if($appointment['total_price'] > 300) $monthsCnt = 4;
+        for($i = 1; $i <= $monthsCnt; $i++){
+            $visitDate = Carbon::createFromDate($visitDateExploded[0], $visitDateExploded[1], $visitDateExploded[2]);
+            $appointment['installment_payment_date' . $i] = $visitDate->addMonths($i);
+            $appointment['installment_payment_date' . $i] = $appointment['installment_payment_date' . $i]->toDateString();
+        }
         
+        return $appointment;
     }
 }

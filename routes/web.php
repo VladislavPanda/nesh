@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/requests', [AppointmentController::class, 'store'])->name('appointments.store');
+Route::post('/requests', [AppointmentController::class, 'store'])->name('appointments.store'); // Создание поста
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
