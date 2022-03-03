@@ -21,3 +21,4 @@ Route::get('/', function () {
 
 Route::post('/requests', [AppointmentController::class, 'store'])->name('appointments.store'); // Создание поста
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/appointment/procedures/{id}', [AppointmentController::class, 'getProcedures'])->name('procedures_modal');
