@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->json('services')->nullable();
             $table->date('visit_date')->nullable();
+            $table->double('initial_fee')->nullable();
+            $table->double('total_price')->nullable();
 
             $table->timestamps();
             $table->softDeletes();

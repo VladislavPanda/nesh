@@ -23,6 +23,3 @@ Route::post('/requests', [AppointmentController::class, 'store'])->name('appoint
 Route::get('/admin', [AdminController::class, 'signin'])->name('admin.signin');
 Route::get('/admin/main', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/appointment/procedures/{id}', [AppointmentController::class, 'getProcedures'])->name('procedures_modal');
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

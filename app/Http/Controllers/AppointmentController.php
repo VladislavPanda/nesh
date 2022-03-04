@@ -21,6 +21,8 @@ class AppointmentController extends Controller
 
     public function store(Request $request){
         $appointment = $request->except(['_token']);
+
+        //dd($appointment);
         
         $appointment = $this->installmentCounterService->prepareAppointment($appointment); // Вызываем стартовый метод сервиса
         $this->appointmentCRUDService->store($appointment); // Осуществляем запись обработанного объекта в БД
