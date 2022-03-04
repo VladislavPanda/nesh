@@ -20,5 +20,9 @@ Route::get('/', function () {
 });
 
 Route::post('/requests', [AppointmentController::class, 'store'])->name('appointments.store'); // Создание поста
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::get('/admin', [AdminController::class, 'signin'])->name('admin.signin');
+Route::get('/admin/main', [AdminController::class, 'index'])->name('admin.index');
 Route::get('/appointment/procedures/{id}', [AppointmentController::class, 'getProcedures'])->name('procedures_modal');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
