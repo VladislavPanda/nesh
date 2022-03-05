@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,11 @@ Route::get('/', function () {
 });
 
 Route::post('/requests', [AppointmentController::class, 'store'])->name('appointments.store'); // Создание поста
-Route::get('/admin', [AdminController::class, 'signin'])->name('admin.signin');
-Route::get('/admin/main', [AdminController::class, 'index'])->name('admin.index');
-Route::get('/appointment/procedures/{id}', [AppointmentController::class, 'getProcedures'])->name('procedures_modal');
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login_process', [AuthController::class, 'login'])->name('login_process');
+
+Route::middleware(['auth', 'prevent-back-history'])->prefix('admin')->group(function(){
+    Route::get('/appointments', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/appointment/procedures/{id}', [AppointmentController::class, 'getProcedures'])->name('procedures_modal');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});

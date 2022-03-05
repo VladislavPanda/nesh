@@ -25,19 +25,28 @@
     <div class="bg-contact3" style="background-image: url('{{ asset('images/nesh.jpg') }}');">
 		<div class="container-contact3">
 			<div class="wrap-contact3">
-				<form class="contact3-form validate-form" action=" {{ route('admin.signin') }} " method="post">
+				@if($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
+				<form class="contact3-form validate-form" action=" {{ route('login_process') }} " method="post">
 					@csrf
 					<span class="contact3-form-title">
 						Вход в систему
 					</span>
 
 					<div class="wrap-input3 validate-input" data-validate="Name is required" style="padding-top: 0px">
-						<input class="input3" type="text" name="name" placeholder="Введите логин">
+						<input class="input3" type="email" name="email" placeholder="Введите email">
 						<span class="focus-input3"></span>
 					</div>
 
 					<div class="wrap-input3 validate-input">
-						<input class="input3" type="text" name="phone" id="phone" placeholder="Введите пароль">
+						<input class="input3" type="password" name="password" id="password" placeholder="Введите пароль">
 						<span class="focus-input3"></span>
 					</div>
 

@@ -15,10 +15,6 @@ class AdminController extends Controller
         $this->dateHandlerService = $dateHandlerService;
     }
 
-    public function signin(){
-        return view('admin.appointment.signin');
-    }
-
     public function index(){
         $appointments = Appointment::all()->toArray();
         $appointments = $this->dateHandlerService->handle($appointments);
